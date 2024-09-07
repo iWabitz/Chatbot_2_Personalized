@@ -3,6 +3,8 @@ import openai
 import time
 import os
 from src.home_page import home
+from streamlit_timeline import st_timeline
+
 
 st.set_page_config(page_title = 'Shawn AI', page_icon='🤖', layout = 'wide')
 
@@ -52,6 +54,7 @@ def get_assistant_response(assistant_id, thread_id, user_input):
         return "I\m sorry but that did not work :("
     
 def display_chatbot():
+    st.title('Shawn AI 🤖')
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
