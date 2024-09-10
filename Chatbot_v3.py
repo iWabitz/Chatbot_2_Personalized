@@ -3,6 +3,7 @@ import openai
 import time
 import os
 from src.home_page import home
+from src.my_project import project
 from streamlit_timeline import st_timeline
 
 
@@ -79,12 +80,14 @@ def main():
     
     with st.sidebar:
         st.title("Medical Industry AI Integration")
-    sections = ['Home', 'Chatbot']
+    sections = ['Home', 'Chatbot', 'Projects']
     selected_section = st.sidebar.radio('Navigation', sections)
     if selected_section == 'Home':
         home()
     elif selected_section == 'Chatbot':
         display_chatbot()
+    elif selected_section == 'Projects':
+        project()
 
 if __name__ == "__main__":
     main()
