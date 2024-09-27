@@ -1,13 +1,22 @@
+
+
 import streamlit as st
-from streamlit_timeline import st_timeline
 from home_src.about_me import about_me
-from home_src.timeline import timeline
+from home_src.timeline import line_data
 from home_src.skills_technology import skills_technology
 from home_src.get_touch import get_touch
+from streamlit_extras.colored_header import colored_header
+
+st.set_page_config(layout="wide")
 
 
 def home():
-    st.title('Shawn AI 🤖')
+    st.title('Home 🏠')
+    colored_header(
+        label="",
+        description="",
+        color_name="green-70"
+    )
     st.write("Welcome to Shawn AI! Today, you'll learn how AI is changing the medical world.")
 
     st.write("""
@@ -29,7 +38,7 @@ def home():
 ############################################################################## About Me
     about_me()    
 ############################################################################## Timeline
-    timeline()
+    line_data()
 ############################################################################## Skills & Technologies
     skills_technology()
 ############################################################################## Services

@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_timeline import st_timeline
 
-def timeline():
+def line_data():
     st.header("Timeline")
     items = [
         {"id": 1, "content": "Born in California", "start": "2011-7-20"},

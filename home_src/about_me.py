@@ -1,6 +1,7 @@
 import streamlit as st
 
 def about_me():
+
     st.header("About Me")
     st.write("""I am a 13 year old coding enthusiast, my hobbies are soccer, coding, and playing video games.
     I was born in the US and have two brothers (yes I am the middle child), and my favorite subject in school is PE.

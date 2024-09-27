@@ -4,10 +4,25 @@ import time
 import os
 from src.home_page import home
 from src.my_project import project
+from change_bg import add_bg_from_local
 from streamlit_timeline import st_timeline
+import base64
 
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    st.App {{
+        background-image: url(data:image/{"png"};based64,{encoded_string.decode()});
+        background_size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
 
-st.set_page_config(page_title = 'Shawn AI', page_icon='🤖', layout = 'wide')
 
 ASSISTANT_ID='asst_Xa0BP7rwsCQUmWLvsezrArgp'
 THREAD_ID='thread_rX8xWaIRK4F5FPe5LLgT1JnS'
@@ -55,7 +70,8 @@ def get_assistant_response(assistant_id, thread_id, user_input):
         return "I\m sorry but that did not work :("
     
 def display_chatbot():
-    st.title('Shawn AI 🤖')
+    st.markdown(f'<h1 style="text-align:center;">{"Shawn AI 🤖"}</h1>', unsafe_allow_html=True)
+    add_bg_from_local('./images/heartbeat.png')
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
