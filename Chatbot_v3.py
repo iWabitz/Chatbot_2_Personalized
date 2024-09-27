@@ -14,10 +14,21 @@ def add_bg_from_local(image_file):
     st.markdown(
     f"""
     <style>
-    st.App {{
-        background-image: url(data:image/{"png"};based64,{encoded_string.decode()});
-        background_size: cover
+    .stApp {{
+        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 1;
+        
     }}
+    .st-emotion-cache-qcqlej ea3mdgi1 {{
+        width: 50%;
+    }}
+    
     </style>
     """,
     unsafe_allow_html=True
