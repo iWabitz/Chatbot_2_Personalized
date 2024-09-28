@@ -5,7 +5,6 @@ from home_src.skills_technology import skills_technology
 from home_src.get_touch import get_touch
 from home_src.intro import introduction
 
-st.set_page_config(layout="wide")
 
 
 
