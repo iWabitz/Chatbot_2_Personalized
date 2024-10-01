@@ -3,6 +3,7 @@ import streamlit as st
 def skills_technology():
     tab1, tab2 = st.tabs(["Skills", "Technologies"])
     with tab1:
+        st.title("Skills")
         st.write("There are many skills you need to know to be able to code an AI chatbot using streamlit")
 
         with st.expander("Python Programming"):

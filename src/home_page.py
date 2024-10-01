@@ -4,6 +4,7 @@ from home_src.timeline import line_data
 from home_src.skills_technology import skills_technology
 from home_src.get_touch import get_touch
 from home_src.intro import introduction
+from home_src.services import serv
 
 
 
@@ -20,10 +21,7 @@ def home():
 ############################################################################## Skills & Technologies
     skills_technology()
 ############################################################################## Services
-    st.header("Services")
-    
-    
-
+    serv()
 ############################################################################## Get In Touch
     get_touch()
 ############################################################################## END
