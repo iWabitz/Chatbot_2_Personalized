@@ -13,4 +13,5 @@ def serv():
         and shooting skills. I have experience in this because my little brother loves playing soccer and wants to improve, so I practice with him everyday outside.""")
     with tabs_3:
         st.header("Robot Assistance 🤖")
-        st.write()
+        st.write("""I could give ideas on how to improve robots, and mechanisms they should use to make their scoring more accurate. For example, they could use sensors such as cameras to detect where
+        they need to go and position their robot more accurately if their game uses april tags.""")
