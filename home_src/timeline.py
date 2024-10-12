@@ -2,7 +2,9 @@ import streamlit as st
 from streamlit_timeline import st_timeline
 
 def line_data():
-    st.header("Timeline")
+    st.markdown(f'''<h2 style= "color: black;">{"Timeline"}</h2>''', unsafe_allow_html=True)
+
+
     items = [
         {"id": 1, "content": "Born in California", "start": "2011-7-20"},
         {"id": 2, "content": "Started playing soccer", "start": "2016-5-20"},
@@ -13,5 +15,5 @@ def line_data():
     ]
 
     timeline = st_timeline(items, groups=[], options={}, height="150px")
-    st.subheader("Selected item")
-    st.write(timeline)
+    st.markdown(f'''<h3 style= "color: black;">{"Selected item️"}</h3>''', unsafe_allow_html=True)
+    st.markdown(f'<span style="color:black"> {timeline}</span>', unsafe_allow_html=True)

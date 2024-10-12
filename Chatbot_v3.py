@@ -7,6 +7,7 @@ from src.my_project import project
 import base64
 from old.chat_time import generate_time
 from src.background_img import add_bg_from_local
+from st_on_hover_tabs import on_hover_tabs
 
 st.set_page_config(layout="wide")
 
@@ -82,16 +83,16 @@ def display_chatbot():
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 def main():
-    
     with st.sidebar:
         st.title("Medical Industry AI Integration")
-    sections = ['Home', 'Chatbot', 'Projects']
-    selected_section = st.sidebar.radio('Navigation', sections)
-    if selected_section == 'Home':
+        sections = on_hover_tabs(tabName=['Home', 'Chatbot', 'Projects'],
+                                 iconName=['home', 'chatbot', 'economy'], default_choice=0)
+
+    if sections == 'Home':
         home()
-    elif selected_section == 'Chatbot':
+    elif sections == 'Chatbot':
         display_chatbot()
-    elif selected_section == 'Projects':
+    elif sections == 'Projects':
         project()
 
 if __name__ == "__main__":
