@@ -87,6 +87,7 @@ def main():
         st.title("Medical Industry AI Integration")
         sections = on_hover_tabs(tabName=['Home', 'Chatbot', 'Projects'],
                                  iconName=['home', 'chatbot', 'economy'], default_choice=0)
+    
 
     if sections == 'Home':
         home()
