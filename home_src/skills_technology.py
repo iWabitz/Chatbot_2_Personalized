@@ -1,28 +1,17 @@
 import streamlit as st
 
 def skills_technology():
-    st.markdown("""
-    <style>
-
-    	.stTabs [data-baseweb="tab-list"] {
-    		gap: px;
-    		text-color: black;
-        }
-
-    	.stTabs [data-baseweb="tab"] {
-    		height: 50px;
-            text-color: black;
-    		border-radius: 4px 4px 0px 0px;
-    		gap: 5px;
-    		padding-top: 10px;
-    		padding-bottom: 10px;
-        }
-
-    	.stTabs [aria-selected="true"] {
-      		text-color: black;
-    	}
-
-    </style>""", unsafe_allow_html=True)
+    custom_css = '''
+        <style>
+            .stTabs [data-baseweb="tab-list"] {
+                gap: 5px;
+            }
+            .stTabs [data-baseweb="tab"] {
+                color: black;
+            }
+        </style>
+    '''
+    st.markdown(custom_css, unsafe_allow_html = True)
 
     tab1, tab2 = st.tabs(["Skills", "Technologies"])
     with tab1:
