@@ -15,6 +15,9 @@ def add_bg_from_local():
             background-image: url(https://media.discordapp.net/attachments/840396747729928214/1291910566394331166/sky.jpg?ex=6701d0f9&is=67007f79&hm=1ef1e3bb00d0efe71f15fd59c6f7913216fb97301e67f002f26292aa4c1e6931&=&format=webp&width=906&height=602);
             background-size: cover;
         }}
+        .st-emotion-cache-1sno8jx
+            font-family: "Arial", sans-serif;
+            font-weight: 900
         </style>
         """,
         unsafe_allow_html=True

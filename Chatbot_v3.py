@@ -58,21 +58,22 @@ def get_assistant_response(assistant_id, thread_id, user_input):
     except Exception as e:
         st.error(f"Error getting assistant response: {str(e)}")
         return "I\m sorry but that did not work :("
-    
+
 def display_chatbot():
+
     st.markdown(f'<h1 style="text-align:center;">{"Medical AI 🏥"}</h1>', unsafe_allow_html=True)
     add_bg_from_local('./images/heartbeat.png', width = 400, height = 400)
     for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
+        with st.chat_message(message["role"], avatar = get_avatar(message['role'])):
             st.markdown(message["content"])
 
     prompt = st.chat_input("Ask me anything!")
     if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar = get_avatar('user')):
             st.markdown(prompt)
 
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar = get_avatar('assistant')):
             message_placeholder = st.empty()
             full_response = get_assistant_response(
                 ASSISTANT_ID,
@@ -81,7 +82,14 @@ def display_chatbot():
             )
             message_placeholder.markdown(full_response)
         st.session_state.messages.append({"role": "assistant", "content": full_response})
+def get_avatar(role):
 
+    if role == 'user':
+        return './images/user.png'
+    elif role == 'assistant':
+        return './images/assistant.png'
+    else:
+        return None
 def main():
     with st.sidebar:
         st.title("Medical Industry AI Integration")
