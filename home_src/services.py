@@ -7,7 +7,7 @@ def serv():
                     {
                         border: 5px solid rgba(49, 51, 63, 0.2);
                         border-radius: 0.5rem;
-                        border-color: blue;
+                        border-color: pink;
                         padding-left: 25px;
                     }
                     """,

@@ -9,7 +9,7 @@ def about_me():
                 {
                     border: 5px solid rgba(49, 51, 63, 0.2);
                     border-radius: 0.5rem;
-                    border-color: violet;
+                    border-color: gray;
                     
                     padding-right: 400px;
 
